@@ -1,12 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:profilio/utils/app_color.dart';
 import 'package:profilio/utils/app_images.dart';
-
-
 class MenuNavigationBar extends StatefulWidget {
   const MenuNavigationBar({Key? key}) : super(key: key);
 
@@ -26,6 +20,7 @@ class _MenuNavigationBarState extends State<MenuNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return  Stack(
+
       alignment: Alignment.bottomCenter,
       children: [
         Container(
@@ -99,8 +94,8 @@ class _MenuNavigationBarState extends State<MenuNavigationBar> {
             SvgPicture.asset(
               path,
 
-              width: 34.0,
-              height: 34.0,
+              width: 25.0,
+              height: 25.0,
             ),
           ],
         ),

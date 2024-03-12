@@ -7,5 +7,10 @@ class AppColors{
   static Color greyColor=Color(0xff949494);
   static Color blue=Color(0xff5063BF);
   static Color allColor=Color(0xff949494);
+  static Color allSide=Color(0xffCBCBCB);
+  static Color roundColor=Color(0xffD3D3D3);
+
+
+
 
 }

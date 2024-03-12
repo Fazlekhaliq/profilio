@@ -1,27 +1,41 @@
 
+import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:profilio/Views/CvCreate/cv_create.dart';
 import 'package:profilio/Views/EducationDetails/education_details.dart';
+import 'package:profilio/Views/SkillDetails/skill_details.dart';
+import 'package:profilio/Views/UploadData/component/details.dart';
+import 'package:profilio/Views/UploadDecument/components/container1.dart';
+import 'package:profilio/Views/home/component/header.dart';
+import 'package:profilio/Views/workExperience/work_experience.dart';
 import 'package:profilio/utils/app_color.dart';
 import 'package:profilio/utils/app_images.dart';
 import 'package:profilio/utils/app_text.dart';
 import 'package:profilio/widgets/AddMore.dart';
 import 'package:profilio/widgets/Custom_textform_field.dart';
+import 'package:profilio/widgets/custom_button.dart';
 import 'package:profilio/widgets/custom_text.dart';
+import 'package:profilio/widgets/description.dart';
 import 'package:profilio/widgets/rounded_button.dart';
+import 'package:profilio/widgets/upload_widget.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+
+import '../../../widgets/from_to_continus.dart';
 
 import '../../widgets/header.dart';
 import '../bottomNav.dart';
 
-class PersonalDetails extends StatefulWidget {
-  const PersonalDetails({super.key});
+
+class CertificatesDetails extends StatefulWidget {
+  const CertificatesDetails({super.key});
 
   @override
-  State<PersonalDetails> createState() => _PersonalDetailsState();
+  State<CertificatesDetails> createState() => _CertificatesDetailsState();
 }
 
-class _PersonalDetailsState extends State<PersonalDetails> {
+class _CertificatesDetailsState extends State<CertificatesDetails> {
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +62,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                 padding: EdgeInsets.symmetric(horizontal: 18.0),
                 child: StepProgressIndicator(
                   totalSteps: 10,
-                  currentStep: 1,
+                  currentStep: 5,
                   size: 6,
 
                   selectedColor: Colors.blue,
@@ -58,84 +72,52 @@ class _PersonalDetailsState extends State<PersonalDetails> {
               SizedBox(height: 30.h,),
               Padding(
                 padding: const EdgeInsets.only(left: 18.0).r,
-                child: CustomText(text: "Personal Details", style: kFirstTextStyle),
+                child: CustomText(text: "Certification/Diploma Details", style: kFirstTextStyle),
               ),
               SizedBox(height: 20.h,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 100.h,
-                    width: 100.w,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: AppColors.greyColor),
-                      borderRadius: BorderRadius.circular(10).w,
-                    ),
-                    child: Image.asset(AppImages.imageIcon)
-                  ),
-                ],
-              ),
-             SizedBox(height: 15.h,),
+
+
               CustomTextFormField(
-                labelText: "Professional Title",
-                hintText: "Professional Title",
+                labelText: "Certification/Diploma Name",
+                hintText: "Certification/Diploma Name",
               ),
               SizedBox(height: 15.h,),
               CustomTextFormField(
-                labelText: "First Name",
-                hintText: "First Name",
+                labelText: "Organization/Institution",
+                hintText: "Organization/Institution",
               ),
               SizedBox(height: 15.h,),
               CustomTextFormField(
-                labelText: "Last Name",
-                hintText: "Last Name",
+                labelText: "Date of Completion/Award",
+                hintText: "Date of Completion/Award",
+              ),
+
+
+              SizedBox(height: 15.h,),
+              CustomTextFormField(
+                labelText: "Certification/Diploma Number",
+                hintText: "Certification/Diploma Number",
               ),
               SizedBox(height: 15.h,),
               CustomTextFormField(
-                labelText: "Email",
-                hintText: "Email",
+                labelText: "Expiration Date",
+                hintText: "MM\DD\YYYY",
               ),
               SizedBox(height: 15.h,),
               CustomTextFormField(
-                labelText: "Phone Number",
-                hintText: "Phone Number",
+                labelText: "Certification/Diploma Number",
+                hintText: "Number",
               ),
               SizedBox(height: 15.h,),
-              CustomTextFormField(
-                labelText: "Address",
-                hintText: "Address",
-              ),
+              UploadWidget(text: "Upload Document"),
               SizedBox(height: 15.h,),
-              CustomTextFormField(
-                labelText: "Postal/Zip Code",
-                hintText: "Postal/Zip Code",
-              ),
-              SizedBox(height: 15.h,),
-              CustomTextFormField(
-                labelText: "City",
-                hintText: "City",
-              ),
-              SizedBox(height: 15.h,),
-              CustomTextFormField(
-                labelText: "Nationality",
-                hintText: "Nationality",
-              ),
-              SizedBox(height: 15.h,),
-              CustomTextFormField(
-                labelText: "Driver's License",
-                hintText: "Driver's License",
-              ),
-              SizedBox(height: 15.h,),
-              CustomTextFormField(
-                labelText: "Nationality",
-                hintText: "Nationality",
-              ),
-              SizedBox(height: 15.h,),
-             AddMore(text: "Add More"),
+
+
+              AddMore(text: "Add More"),
+
               SizedBox(height: 30.h,),
               RoundedButton(skipTap: (){}, nextTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => EducationDetails(),));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SkillDetails(),));
 
               }),
               SizedBox(height: 50.h,),

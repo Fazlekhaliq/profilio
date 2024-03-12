@@ -1,36 +1,24 @@
 
-import 'package:dotted_border/dotted_border.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:profilio/Views/CvCreate/cv_create.dart';
-import 'package:profilio/widgets/description.dart';
-import 'package:profilio/Views/UploadData/component/details.dart';
-import 'package:profilio/Views/UploadDecument/components/container1.dart';
-import 'package:profilio/Views/home/component/header.dart';
-import 'package:profilio/Views/workExperience/work_experience.dart';
-import 'package:profilio/utils/app_color.dart';
+import 'package:profilio/Views/LanguagesDetails/languages_details.dart';
 import 'package:profilio/utils/app_images.dart';
 import 'package:profilio/utils/app_text.dart';
 import 'package:profilio/widgets/AddMore.dart';
 import 'package:profilio/widgets/Custom_textform_field.dart';
-import 'package:profilio/widgets/custom_button.dart';
 import 'package:profilio/widgets/custom_text.dart';
 import 'package:profilio/widgets/rounded_button.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
-
 import '../../widgets/header.dart';
 import '../bottomNav.dart';
-import '../../widgets/from_to_continus.dart';
-
-class EducationDetails extends StatefulWidget {
-  const EducationDetails({super.key});
+class MediaDetails extends StatefulWidget {
+  const MediaDetails({super.key});
 
   @override
-  State<EducationDetails> createState() => _EducationDetailsState();
+  State<MediaDetails> createState() => _MediaDetailsState();
 }
 
-class _EducationDetailsState extends State<EducationDetails> {
+class _MediaDetailsState extends State<MediaDetails> {
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +29,7 @@ class _EducationDetailsState extends State<EducationDetails> {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(AppImages.educationBackground),
+              image: AssetImage(AppImages.skillBackground),
               fit: BoxFit.cover,
             )
         ),
@@ -57,7 +45,7 @@ class _EducationDetailsState extends State<EducationDetails> {
                 padding: EdgeInsets.symmetric(horizontal: 18.0),
                 child: StepProgressIndicator(
                   totalSteps: 10,
-                  currentStep: 2,
+                  currentStep: 7,
                   size: 6,
 
                   selectedColor: Colors.blue,
@@ -65,35 +53,25 @@ class _EducationDetailsState extends State<EducationDetails> {
                 ),
               ),
               SizedBox(height: 30.h,),
-
               Padding(
                 padding: const EdgeInsets.only(left: 18.0).r,
-                child: CustomText(text: "Education Details", style: kFirstTextStyle),
+                child: CustomText(text: "Social Media Details", style: kFirstTextStyle),
               ),
-              SizedBox(height: 15.h,),
+              SizedBox(height: 20.h,),
+
               CustomTextFormField(
-                labelText: "Education Details",
-                hintText: "Education Details",
+                labelText: "Social Media",
+                hintText: "Link here",
               ),
               SizedBox(height: 15.h,),
-              CustomTextFormField(
-                labelText: "School",
-                hintText: "School",
-              ),
-              SizedBox(height: 15.h,),
-              FromToContinue(),
-              SizedBox(height: 30.h,),
-              DescriptionWidget(),
-              SizedBox(height: 15.h,),
-              AddMore(text: "Add Education"),
-              SizedBox(height: 30.h,),
+
+              AddMore(text: "Add More Social Media"),
+              SizedBox(height: 50.h,),
               RoundedButton(skipTap: (){}, nextTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => WorkExperience(),));
+               Navigator.push(context, MaterialPageRoute(builder: (context) => LanguageDetails(),));
 
               }),
               SizedBox(height: 50.h,),
-
-
 
 
 

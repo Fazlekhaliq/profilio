@@ -1,11 +1,8 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:profilio/Views/CvCreate/cv_create.dart';
 import 'package:profilio/Views/UploadData/upload_data.dart';
 import 'package:profilio/Views/UploadDecument/components/container1.dart';
-import 'package:profilio/Views/home/component/header.dart';
 import 'package:profilio/utils/app_color.dart';
 import 'package:profilio/utils/app_images.dart';
 import 'package:profilio/utils/app_text.dart';

@@ -5,26 +5,25 @@ import 'package:profilio/utils/app_color.dart';
 import 'package:profilio/utils/app_text.dart';
 import 'package:profilio/widgets/custom_text.dart';
 
-class CustomTextFormField extends StatelessWidget {
+class DescriptionWidget extends StatelessWidget {
 
   TextEditingController? controller;
   String? Function(String?)? validator;
-  String? hintText;
-  String?    labelText;
+
+
 
   TextInputType? keyboardType;
   TextStyle? style;
   Widget? suffixIcon;
   Widget? prefixIcon;
 
-
-  CustomTextFormField({
+  DescriptionWidget({
     super.key,
-    this.labelText,
+
     this.suffixIcon,
     this.controller,
     this.validator,
-    this.hintText,
+
     this.prefixIcon,
 
     this.keyboardType,
@@ -39,10 +38,10 @@ class CustomTextFormField extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
 
         children: [
-          CustomText(text: labelText.toString(), style: kFormTextStyle),
+          CustomText(text: "Description", style: kFormTextStyle),
           SizedBox(height: 10.h,),
           Container(
-            height: 55.h,
+            height: 93.h,
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -54,17 +53,15 @@ class CustomTextFormField extends StatelessWidget {
               padding: EdgeInsets.only(left: 20.w),
               child: TextFormField(
 
-
                 controller: controller,
                 style: style,
                 validator: validator,
                 keyboardType: keyboardType,
                 decoration: InputDecoration(
 
-
                     suffixIcon: suffixIcon,
                     prefixIcon: prefixIcon,
-                    hintText: hintText,
+                    hintText: "Description",
                     hintStyle: TextStyle(
                       color: AppColors.greyColor,
                       fontWeight: FontWeight.w400,
@@ -74,7 +71,6 @@ class CustomTextFormField extends StatelessWidget {
               ),
             ),
           ),
-
         ],
       ),
     );

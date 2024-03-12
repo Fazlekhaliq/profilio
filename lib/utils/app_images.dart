@@ -13,5 +13,7 @@ class AppImages{
    static String personalBack="assets/images/Personal Details.png";
    static String educationBackground="assets/images/Education Details.png";
    static String imageIcon="assets/images/Vector.png";
+   static String workBackground="assets/images/Work experience Details.png";
+   static String skillBackground="assets/images/Skills Details.png";
 
 }
