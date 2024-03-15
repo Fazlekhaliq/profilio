@@ -33,41 +33,43 @@ class _CvCreateScreenState extends State<CvCreateScreen> {
               fit: BoxFit.cover,
             )
         ),
-        child: Column(
-
-
-          children: [
-            SizedBox(height: 50.h,),
-           Row(
-             children: [
-               IconButton(onPressed: (){
-                 Navigator.pop(context);
-               }, icon: Icon(Icons.arrow_back)),
-             ],
-           ),
-          Image.asset(AppImages.logoImage,height: 228.h,width: 228.w,),
-
-            SizedBox(height: 30.h,),
-            CustomText(text: "Create your profile", style: kFirstTextStyle),
-            SizedBox(height: 30.h,),
-            MyTextFormField(
-              prefixIcon: Image.asset(AppImages.circleIcon,),
-              hintText: "Profile Name",
-
-            ),
-            SizedBox(height: 50.h,),
-            CustomButton(text: "create", onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => UploadDecument(),));
-
-            }),
-
-            Spacer(),
-            MenuNavigationBar(),
-
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+          
+          
+            children: [
+              SizedBox(height: 50.h,),
+             Row(
+               children: [
+                 IconButton(onPressed: (){
+                   Navigator.pop(context);
+                 }, icon: Icon(Icons.arrow_back)),
+               ],
+             ),
+            Image.asset(AppImages.logoImage,height: 228.h,width: 228.w,),
+          
+              SizedBox(height: 30.h,),
+              CustomText(text: "Create your profile", style: kFirstTextStyle),
+              SizedBox(height: 30.h,),
+              MyTextFormField(
+                prefixIcon: Image.asset(AppImages.circleIcon,),
+                hintText: "Profile Name",
+          
+              ),
+              SizedBox(height: 50.h,),
+              CustomButton(text: "create", onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => UploadDecument(),));
+          
+              }),
+          
+            
+          
+            ],
+          ),
         ),
 
       ),
+      bottomNavigationBar:   MenuNavigationBar(),
     );
   }
 }

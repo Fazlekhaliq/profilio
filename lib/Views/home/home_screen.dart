@@ -107,13 +107,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            Spacer(),
-            MenuNavigationBar(),
+
+
 
           ],
         ),
 
       ),
+      bottomNavigationBar:   MenuNavigationBar(),
     );
   }
 }

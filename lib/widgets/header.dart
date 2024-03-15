@@ -23,10 +23,7 @@ class header extends StatelessWidget {
               Navigator.pop(context);
             }, icon: Icon(Icons.arrow_back,size: 24,color: AppColors.black,)),
           ),
-          SizedBox(width: 15.w,),
 
-
-          SizedBox(width: 50.w,),
           Column(
             children: [
               Image.asset(AppImages.profile,height: 40,width: 40,),
@@ -34,6 +31,7 @@ class header extends StatelessWidget {
 
               CustomText(text: "Saima Gill", style: kFirstTextStyle.copyWith(
                 fontWeight: FontWeight.w500,
+                fontFamily: "Roboto-Regular",
                 fontSize: 12,
               ))
             ],

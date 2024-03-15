@@ -3,24 +3,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:profilio/utils/app_color.dart';
 import 'package:profilio/utils/app_text.dart';
 import 'package:profilio/widgets/custom_text.dart';
-
+import 'package:table_calendar/table_calendar.dart';
 class FromToContinue extends StatelessWidget {
   TextEditingController? controller;
   String? Function(String?)? validator;
-
   TextStyle? style;
-
-
   FromToContinue({
     Key? key,
-
     this.controller,
     this.validator,
-
-
     this.style,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -36,16 +29,14 @@ class FromToContinue extends StatelessWidget {
             },
           ),
           buildTextFormField(
-              labelText: "To", hintText: "To"
-
-
+            labelText: "To",
+            hintText: "To",
           ),
           buildTextFormField(labelText: "Continue", hintText: "Continue"),
         ],
       ),
     );
   }
-
   Widget buildTextFormField(
       {required String labelText, required String hintText, Function()? onTap}) {
     return Column(
@@ -70,7 +61,6 @@ class FromToContinue extends StatelessWidget {
               keyboardType: TextInputType.datetime,
               onTap: onTap as void Function()? ?? () {},
               decoration: InputDecoration(
-
                 hintText: hintText,
                 hintStyle: TextStyle(
                   color: AppColors.greyColor,
@@ -85,17 +75,44 @@ class FromToContinue extends StatelessWidget {
       ],
     );
   }
-
+  // Future<void> _selectDate(BuildContext context) async {
+  //   await showDatePicker(
+  //     cancelText: " ",
+  //     helpText: "",
+  //     confirmText: " ",
+  //
+  //     context: context,
+  //     //initialDate: DateTime.now(),
+  //     firstDate: DateTime(2000),
+  //     lastDate: DateTime(2101),
+  //   );
+  // }
   Future<void> _selectDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
-
+    DateTime? selectedDate;
+    selectedDate = await showDialog<DateTime>(
       context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(2000),
-      lastDate: DateTime(2101),
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: SizedBox(
+            height: 360.h,
+            child: TableCalendar(
+
+              firstDay: DateTime.utc(2010, 10, 16),
+              lastDay: DateTime.utc(2030, 3, 14),
+              focusedDay: DateTime.now(),
+
+              headerVisible: false,
+
+          )),
+        );
+
+      },
     );
-    if (picked != null) {
-      controller?.text = picked.toString();
+
+    if (selectedDate != null) {
+      // Do something with the selected date if needed
+      print('Selected date: $selectedDate');
     }
   }
+
 }

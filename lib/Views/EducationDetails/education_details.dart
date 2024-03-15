@@ -2,6 +2,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:profilio/Views/CvCreate/cv_create.dart';
 import 'package:profilio/widgets/description.dart';
@@ -20,6 +21,7 @@ import 'package:profilio/widgets/rounded_button.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 import '../../widgets/header.dart';
+import '../../widgets/step_progress.dart';
 import '../bottomNav.dart';
 import '../../widgets/from_to_continus.dart';
 
@@ -45,61 +47,59 @@ class _EducationDetailsState extends State<EducationDetails> {
               fit: BoxFit.cover,
             )
         ),
-        child: SingleChildScrollView(
-          child: Column(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 50.h,),
+            header(),
+            SizedBox(height: 20.h,),
+            StepProgress(
+              currentStep: 2,
+            ),
+            SizedBox(height: 30,),
+            Padding(
+              padding: const EdgeInsets.only(left: 18.0).r,
+              child: CustomText(text: "Education Details", style: kFirstTextStyle),
+            ),
+            Expanded(
+              child: ListView(
+                shrinkWrap: true,
+              
+               // crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
 
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 50.h,),
-              header(),
-              SizedBox(height: 20.h,),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 18.0),
-                child: StepProgressIndicator(
-                  totalSteps: 10,
-                  currentStep: 2,
-                  size: 6,
 
-                  selectedColor: Colors.blue,
-                  unselectedColor: Colors.grey,
-                ),
+                  CustomTextFormField(
+                    labelText: "Education Details",
+                    hintText: "Education Details",
+                  ),
+                  SizedBox(height: 15.h,),
+                  CustomTextFormField(
+                    labelText: "School",
+                    hintText: "School",
+                  ),
+                  SizedBox(height: 15.h,),
+                  FromToContinue(),
+                  SizedBox(height: 30.h,),
+                  DescriptionWidget(),
+                  SizedBox(height: 15.h,),
+                  AddMore(text: "Add Education"),
+                  SizedBox(height: 30.h,),
+                  RoundedButton(skipTap: (){}, nextTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => WorkExperience(),));
+              
+                  }),
+                  SizedBox(height: 50.h,),
+              
+              
+              
+              
+              
+              
+                ],
               ),
-              SizedBox(height: 30.h,),
-
-              Padding(
-                padding: const EdgeInsets.only(left: 18.0).r,
-                child: CustomText(text: "Education Details", style: kFirstTextStyle),
-              ),
-              SizedBox(height: 15.h,),
-              CustomTextFormField(
-                labelText: "Education Details",
-                hintText: "Education Details",
-              ),
-              SizedBox(height: 15.h,),
-              CustomTextFormField(
-                labelText: "School",
-                hintText: "School",
-              ),
-              SizedBox(height: 15.h,),
-              FromToContinue(),
-              SizedBox(height: 30.h,),
-              DescriptionWidget(),
-              SizedBox(height: 15.h,),
-              AddMore(text: "Add Education"),
-              SizedBox(height: 30.h,),
-              RoundedButton(skipTap: (){}, nextTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => WorkExperience(),));
-
-              }),
-              SizedBox(height: 50.h,),
-
-
-
-
-
-
-            ],
-          ),
+            ),
+          ],
         ),
 
       ),

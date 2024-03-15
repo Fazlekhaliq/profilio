@@ -12,6 +12,7 @@ import 'package:profilio/widgets/rounded_button.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 import '../../widgets/header.dart';
+import '../../widgets/step_progress.dart';
 import '../bottomNav.dart';
 
 class SkillDetails extends StatefulWidget {
@@ -44,16 +45,8 @@ class _SkillDetailsState extends State<SkillDetails> {
               SizedBox(height: 50.h,),
               header(),
               SizedBox(height: 20.h,),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 18.0),
-                child: StepProgressIndicator(
-                  totalSteps: 10,
-                  currentStep: 6,
-                  size: 6,
-
-                  selectedColor: Colors.blue,
-                  unselectedColor: Colors.grey,
-                ),
+              StepProgress(
+                currentStep: 6,
               ),
               SizedBox(height: 30.h,),
               Padding(

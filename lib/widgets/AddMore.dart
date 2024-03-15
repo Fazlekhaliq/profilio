@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../utils/app_text.dart';
 import 'custom_text.dart';
@@ -14,7 +15,8 @@ class AddMore extends StatelessWidget {
       padding: const EdgeInsets.only(left: 12.0),
       child: Row(children: [
         Icon(Icons.add),
-        CustomText(text: text, style: kFormTextStyle.copyWith(
+        SizedBox(width: 5.w,),
+        CustomText(text: text, style: kSecondTextStyle.copyWith(
           fontWeight: FontWeight.w400,
           fontSize: 16
         ))

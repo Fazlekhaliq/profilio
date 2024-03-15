@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import 'package:profilio/utils/app_images.dart';
 class MenuNavigationBar extends StatefulWidget {
   const MenuNavigationBar({Key? key}) : super(key: key);
@@ -7,9 +8,10 @@ class MenuNavigationBar extends StatefulWidget {
   @override
   _MenuNavigationBarState createState() => _MenuNavigationBarState();
 }
-
 class _MenuNavigationBarState extends State<MenuNavigationBar> {
   int selectedIndex = 0;
+
+
 
   void itemTap(int index) {
     setState(() {
@@ -23,7 +25,8 @@ class _MenuNavigationBarState extends State<MenuNavigationBar> {
 
       alignment: Alignment.bottomCenter,
       children: [
-        Container(
+
+        const SizedBox(
           height: 100,
           width: double.infinity,
         ),
@@ -45,9 +48,9 @@ class _MenuNavigationBarState extends State<MenuNavigationBar> {
                 ),
                 _icons(
                   AppImages.shareIcon,
-                  selectedIndex == 1,
+                  selectedIndex == 2,
                       () {
-                    itemTap(1);
+                    itemTap(2);
                   },
                 ),
               ],

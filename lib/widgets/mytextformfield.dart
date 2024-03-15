@@ -54,6 +54,7 @@ class MyTextFormField extends StatelessWidget {
                   color: AppColors.greyColor,
                   fontWeight: FontWeight.w400,
                   fontSize: 14.sp,
+                  fontFamily: "Roboto-Regular"
                 ),
                 border: InputBorder.none),
           ),
